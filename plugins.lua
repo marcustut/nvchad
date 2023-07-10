@@ -23,6 +23,18 @@ local plugins = {
   },
 
   {
+    "numToStr/Comment.nvim",
+    dependencies = {
+      "JoosepAlviste/nvim-ts-context-commentstring",
+    },
+    config = function()
+      require("Comment").setup {
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      }
+    end,
+  },
+
+  {
     "simrat39/rust-tools.nvim",
     dependencies = {
       "neovim/nvim-lspconfig",
@@ -38,6 +50,9 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
+    dependencies = {
+      "windwp/nvim-ts-autotag",
+    },
   },
 
   {
@@ -66,6 +81,11 @@ local plugins = {
     config = function()
       require("nvim-surround").setup()
     end,
+  },
+
+  {
+    "github/copilot.vim",
+    event = "InsertEnter",
   },
 
   -- To make a plugin not be loaded

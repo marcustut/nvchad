@@ -21,6 +21,12 @@ M.treesitter = {
     --   "python"
     -- },
   },
+  context_commentstring = {
+    enable = true,
+  },
+  autotag = {
+    enable = true,
+  },
 }
 
 M.mason = {
@@ -30,7 +36,8 @@ M.mason = {
     "stylua",
 
     -- web dev stuff
-    "eslint",
+    "eslint_d",
+    "prettier",
     "css-lsp",
     "html-lsp",
     "tailwindcss-language-server",
@@ -41,11 +48,14 @@ M.mason = {
     "clang-format",
 
     -- rust stuff
-    "rust_analyzer",
+    "rust-analyzer",
     "rustfmt",
 
     -- python stuff
     "pyright",
+    "black",
+    "mypy",
+    "pydocstyle",
   },
 }
 
